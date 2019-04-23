@@ -1,0 +1,36 @@
+{
+    "name": "dromedar-design/laravel-prismic",
+    "description": "Automatic Eloquent models and better templating for Prismic",
+    "homepage": "https://github.com/dromedar-design/laravel-prismic",
+    "license": "MIT",
+    "authors": [{
+        "name": "Gabor Juhasz",
+        "email": "gabor@dromedar.design",
+        "homepage": "https://dromedar.design"
+    }],
+    "require": {
+        "php": "^7.1",
+        "prismic/php-sdk": "5.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0|^8.0",
+        "orchestra/testbench": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "DromedarDesign\\Prismic\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DromedarDesign\\Prismic\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DromedarDesign\\Prismic\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
