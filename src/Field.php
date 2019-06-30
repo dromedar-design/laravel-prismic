@@ -48,11 +48,7 @@ class Field
             return $this->model();
         }
 
-        if (is_array($this->data)) {
-            return RichText::asText($this->data);
-        }
-
-        return $this->data;
+        return rtrim(RichText::asText($this->data));
     }
 
     public function html()
@@ -65,11 +61,7 @@ class Field
             return $this->model();
         }
 
-        if (is_array($this->data)) {
-            return RichText::asHtml($this->data);
-        }
-
-        return $this->data;
+        return RichText::asHtml($this->data);
     }
 
     public function isImage()
