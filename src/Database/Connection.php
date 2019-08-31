@@ -17,4 +17,9 @@ class Connection
 
         return $statement->rowCount();
     }
+
+    public function quote($string)
+    {
+        return $string;
+    }
 }

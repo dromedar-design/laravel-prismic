@@ -19,7 +19,7 @@ class Cache implements CacheInterface
 
     public function set($key, $value, $ttl = 0)
     {
-        if ($ttl == 0) {
+        if (0 == $ttl) {
             return LaravelCache::forever($this->prefix($key), $value);
         } else {
             return LaravelCache::add($this->prefix($key), $value, $ttl);
@@ -33,11 +33,11 @@ class Cache implements CacheInterface
 
     public function clear()
     {
-        return LaravelCache::flush(config('database.connections.prismic.cache.prefix'));
+        return LaravelCache::flush(config('database.connections.prismic.cache.prefix', 'laravel-prismic'));
     }
 
     protected function prefix($key)
     {
-        return config('database.connections.prismic.cache.prefix') . '.' . $key;
+        return config('database.connections.prismic.cache.prefix', 'laravel-prismic') . '.' . $key;
     }
 }
